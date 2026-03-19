@@ -71,7 +71,8 @@ This test verifies that the API successfully creates a new task when valid data 
 
 ### ❌ Create Task - Missing Title (400 Bad Request)
 This test verifies that the API correctly validates required fields and returns an error when the title is missing.
-![Create Task Fail](<img src="screenshots/2_create_task_success.png" width="600">) 
+<img src="screenshots/2_create_task_missing_title.png" width="600">
+
 
 ### 🔐 SQL Injection Test
 This test verifies that the API is protected against SQL injection attacks and properly handles malicious input without exposing or compromising data.
