@@ -1,0 +1,3060 @@
+{
+  "info": {
+    "_postman_id": "fae53e69-573a-4b55-8eb2-e43198882341",
+    "name": "Task Board",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14238187"
+  },
+  "item": [
+    {
+      "name": "Functional Tests",
+      "item": [
+        {
+          "name": "Positive Tests",
+          "item": [
+            {
+              "name": "Verify API base route returns available endpoints",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "List all API endpoints",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "389"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 11:29:19 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"185-s+68XEaPYQUReTfIdIL09ollTXI\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"route\": \"/api\",\n        \"method\": \"get\"\n    },\n    {\n        \"route\": \"/api/tasks\",\n        \"method\": \"get\"\n    },\n    {\n        \"route\": \"/api/tasks/:id\",\n        \"method\": \"get\"\n    },\n    {\n        \"route\": \"/api/tasks/search/:keyword\",\n        \"method\": \"get\"\n    },\n    {\n        \"route\": \"/api/tasks/board/:boardName\",\n        \"method\": \"get\"\n    },\n    {\n        \"route\": \"/api/tasks\",\n        \"method\": \"post\"\n    },\n    {\n        \"route\": \"/api/tasks/:id\",\n        \"method\": \"patch\"\n    },\n    {\n        \"route\": \"/api/tasks/:id\",\n        \"method\": \"delete\"\n    },\n    {\n        \"route\": \"/api/boards\",\n        \"method\": \"get\"\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Verify GET /api/boards returns all boards",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/api/boards",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "boards"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "List all boards",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/boards",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "boards"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "86"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 11:33:40 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"56-zPlGVxCcp8lj+EC3whWPRoaw7Ng\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1001,\n        \"name\": \"Open\"\n    },\n    {\n        \"id\": 1002,\n        \"name\": \"In Progress\"\n    },\n    {\n        \"id\": 1003,\n        \"name\": \"Done\"\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Verify GET /api/tasks returns all tasks",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{vault:github-personal-access-token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "List all tasks",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "1323"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json",
+                      "description": "",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 11:36:40 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"52b-l8P+aXL/LMJ2SYkB4aQUcYdVvhE\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [
+                    {
+                      "expires": "Invalid Date",
+                      "domain": "",
+                      "path": ""
+                    }
+                  ],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Project skeleton\",\n        \"description\": \"Create project folders, services, controllers and views\",\n        \"board\": {\n            \"id\": 1003,\n            \"name\": \"Done\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Home page\",\n        \"description\": \"Create the [Home] page and list tasks count by board\",\n        \"board\": {\n            \"id\": 1003,\n            \"name\": \"Done\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 3,\n        \"title\": \"View task board\",\n        \"description\": \"Create the [Task Board] page and list all tasks by board\",\n        \"board\": {\n            \"id\": 1002,\n            \"name\": \"In Progress\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Create tasks\",\n        \"description\": \"Implement [Create Task] page for adding new tasks\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Edit tasks\",\n        \"description\": \"Implement [Edit Tasks] page for editing existing tasks\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Improve CSS styles\",\n        \"description\": \"Implement better styling for all public pages\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Verify GET /api/tasks/:id returns correct task",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks/4",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "4"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Return a task by given ID",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/4",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "4"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "214"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 11:52:13 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"d6-GiEVmMTVUfnevYWCIUAdU7pzKyE\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 4,\n    \"title\": \"Create tasks\",\n    \"description\": \"Implement [Create Task] page for adding new tasks\",\n    \"board\": {\n        \"id\": 1001,\n        \"name\": \"Open\"\n    },\n    \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n    \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task search by keyword returns matching tasks",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{vault:github-personal-access-token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks/search/tasks",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "search",
+                    "tasks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "List all tasks matching given keyword",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/tasks",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "search",
+                        "tasks"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "881"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 12:01:29 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"371-lsSFESI3o1XlWTXlZQOmO0WHnZY\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 2,\n        \"title\": \"Home page\",\n        \"description\": \"Create the [Home] page and list tasks count by board\",\n        \"board\": {\n            \"id\": 1003,\n            \"name\": \"Done\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 3,\n        \"title\": \"View task board\",\n        \"description\": \"Create the [Task Board] page and list all tasks by board\",\n        \"board\": {\n            \"id\": 1002,\n            \"name\": \"In Progress\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Create tasks\",\n        \"description\": \"Implement [Create Task] page for adding new tasks\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Edit tasks\",\n        \"description\": \"Implement [Edit Tasks] page for editing existing tasks\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Verify tasks filtered by board name",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks/board/Open",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "board",
+                    "Open"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "List task by board name",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/board/Open",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "board",
+                        "Open"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "651"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 12:03:52 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"28b-ENVxeyw21S8pmjht7leBTC2WeJw\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 4,\n        \"title\": \"Create tasks\",\n        \"description\": \"Implement [Create Task] page for adding new tasks\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Edit tasks\",\n        \"description\": \"Implement [Edit Tasks] page for editing existing tasks\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Improve CSS styles\",\n        \"description\": \"Implement better styling for all public pages\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T11:27:52.981Z\"\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Verify search endpoint responds within acceptable time",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": [
+                {
+                  "name": "Verify search endpoint responds within acceptable time",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/3",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "3"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "231"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 13:12:24 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"e7-EtJvCKcyZPCpXBI1B1zgVbN03UY\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 3,\n    \"title\": \"View task board\",\n    \"description\": \"Create the [Task Board] page and list all tasks by board\",\n    \"board\": {\n        \"id\": 1002,\n        \"name\": \"In Progress\"\n    },\n    \"dateCreated\": \"2026-02-23T12:42:14.232Z\",\n    \"dateModified\": \"2026-02-23T12:42:14.232Z\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task creation with valid data",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Test Task\",\r\n    \"description\": \"Verify task creation with valid data\",\r\n    \"board\": \"Open\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify task creation with valid data",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"title\": \"Test Task\",\r\n    \"description\": \"Verify task creation with valid data\",\r\n    \"board\": \"Open\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseURL}}/api/tasks",
+                      "host": [
+                        "{{baseURL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "227"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 18 Feb 2026 14:45:16 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"e3-7Sp7IGbCrrqtkpnIxlHOYs3sSfg\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"msg\": \"Task added.\",\n    \"task\": {\n        \"id\": 7,\n        \"title\": \"Test Task\",\n        \"description\": \"Verify task creation with valid data\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-18T14:45:16.763Z\",\n        \"dateModified\": \"2026-02-18T14:45:16.763Z\"\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Create Task",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{vault:github-personal-access-token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Sprint 1\",\r\n    \"description\": \"API + UI tests\",\r\n    \"board\": \"Open\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Create Task",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"title\": \"Sprint 1\",\r\n    \"description\": \"API + UI tests\",\r\n    \"board\": \"Open\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "204"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 12:12:11 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"cc-enqUvEafknXgfNokD/xjMbrY0zw\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"msg\": \"Task added.\",\n    \"task\": {\n        \"id\": 7,\n        \"title\": \"Sprint 1\",\n        \"description\": \"API + UI tests\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T12:12:11.183Z\",\n        \"dateModified\": \"2026-02-16T12:12:11.183Z\"\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Create Task 2",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{vault:github-personal-access-token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Run all test cases planned in Sprint 1\",\r\n    \"description\": \"Run all tests during the 2–4 week Sprint period \",\r\n    \"board\": \"Open\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Create Task 2",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"title\": \"Run all test cases planned in Sprint 1\",\r\n    \"description\": \"Run all tests during the 2–4 week Sprint period \",\r\n    \"board\": \"Open\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "270"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 12:13:14 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"10e-SK2PxtqgdByk+OpSyaIzFJJrEeQ\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"msg\": \"Task added.\",\n    \"task\": {\n        \"id\": 8,\n        \"title\": \"Run all test cases planned in Sprint 1\",\n        \"description\": \"Run all tests during the 2–4 week Sprint period \",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T12:13:14.682Z\",\n        \"dateModified\": \"2026-02-16T12:13:14.682Z\"\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task update with valid data",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{vault:github-personal-access-token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n   \r\n    \"description\": \"Create tests for authentication, authorization, input validation, SQL/NoSQL injection, XSS, XML bomb \"\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/7",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "7"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Edit task",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n   \r\n    \"description\": \"Create tests for authentication, authorization, input validation, SQL/NoSQL injection, XSS, XML bomb \"\r\n    \r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/7",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "7"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "292"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 12:19:44 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"124-TBLCtpLtYJrpNzYyWRoFN+Nd9ck\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"msg\": \"Task edited.\",\n    \"task\": {\n        \"id\": 7,\n        \"title\": \"Sprint 1\",\n        \"description\": \"Create tests for authentication, authorization, input validation, SQL/NoSQL injection, XSS, XML bomb \",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-16T12:12:11.183Z\",\n        \"dateModified\": \"2026-02-16T12:19:44.276Z\"\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task can be moved between valid boards",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"board\": \"Done\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/6",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "6"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify task can be moved between valid boards",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"board\": \"Done\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/6",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "6"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "246"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 12:21:16 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"f6-AmMl6oMoZWeZrH4jBxCR5pZNXpk\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"msg\": \"Task edited.\",\n    \"task\": {\n        \"id\": 6,\n        \"title\": \"Improve CSS styles\",\n        \"description\": \"Implement better styling for all public pages\",\n        \"board\": {\n            \"id\": 1003,\n            \"name\": \"Done\"\n        },\n        \"dateCreated\": \"2026-02-16T11:27:52.981Z\",\n        \"dateModified\": \"2026-02-16T12:21:16.258Z\"\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task deletion with valid ID",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/9",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "9"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Delete task by ID",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/9",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "9"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "25"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 12:24:08 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"19-hfPyXoxMMYvbJtlwe+bunQK6y9g\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"msg\": \"Task deleted: 9\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Negative Tests",
+          "item": [
+            {
+              "name": "Verify API response for non-existing task ID",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks/9",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "9"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify API response for non-existing task ID",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseURL}}/api/tasks/9",
+                      "host": [
+                        "{{baseURL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "9"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 17 Feb 2026 12:43:23 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"26-FpzdvYXnzltRNdKxWAEIuWyq65E\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"errMsg\": \"Cannot find task by id: 9\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task search with non-existing keyword",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks/search/moonlight\n",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "search",
+                    "moonlight\n"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify task search with non-existing keyword",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseURL}}/api/tasks/search/moonlight\n",
+                      "host": [
+                        "{{baseURL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "search",
+                        "moonlight\n"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "2"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 17 Feb 2026 13:07:11 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[]"
+                }
+              ]
+            },
+            {
+              "name": "Verify search endpoint handles excessively long input safely",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel t",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "search",
+                    "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel t"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify search endpoint handles excessively long input safely",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel t",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "search",
+                        "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel t"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "2"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 18 Feb 2026 09:10:05 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[]"
+                }
+              ]
+            },
+            {
+              "name": "Verify filtering by invalid board",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks/board/InvalidBoardName",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "board",
+                    "InvalidBoardName"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify filtering by invalid board",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseURL}}/api/tasks/board/InvalidBoardName",
+                      "host": [
+                        "{{baseURL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "board",
+                        "InvalidBoardName"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "44"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 18 Feb 2026 14:37:33 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"2c-RmgklJ3QaEmrqLTtsCKQB1YFZIo\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"errMsg\": \"Invalid board: invalidboardname\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify API handles rapid repeated requests safely",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/2",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "2"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify API handles rapid repeated requests safely",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/2",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "2"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "214"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 23 Feb 2026 09:55:27 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"d6-w9sfSpr3JMCcovIubI3t49X/eG8\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 2,\n    \"title\": \"Home page\",\n    \"description\": \"Create the [Home] page and list tasks count by board\",\n    \"board\": {\n        \"id\": 1003,\n        \"name\": \"Done\"\n    },\n    \"dateCreated\": \"2026-02-23T08:42:52.953Z\",\n    \"dateModified\": \"2026-02-23T08:42:52.953Z\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task creation fails without title",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"description\": \"Verify task creation fails without title\",\r\n  \"board\": \"Open\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/api/tasks",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify task creation fails without title",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"description\": \"Verify task creation fails without title\",\r\n  \"board\": \"Open\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseURL}}/api/tasks",
+                      "host": [
+                        "{{baseURL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "35"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 18 Feb 2026 14:49:52 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"23-nmwb14TPsSalqp3SqRfnJnFyGTI\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"errMsg\": \"Title cannot be empty!\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task update with invalid ID fails",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"description\": \"Create tests for authentication, authorization, input validation, SQL/NoSQL injection, XSS, XML bomb \"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/15",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "15"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify task update with invalid ID fails",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"description\": \"Create tests for authentication, authorization, input validation, SQL/NoSQL injection, XSS, XML bomb \"\r\n\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/15",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "15"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 19 Feb 2026 08:23:43 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"27-lSjJxr94ylbIZllkF0weZiaNM9g\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"errMsg\": \"Cannot find task by id: 15\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify task can be moved between invalid boards",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"board\": \"TEST\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/6",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "6"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify task can be moved between invalid boards",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"board\": \"TEST\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/6",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "6"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "32"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 19 Feb 2026 10:22:35 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"20-xJkFLWLzsne0d/thd06j43QcBqc\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"errMsg\": \"Invalid board: test\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Verify API rejects unsupported HTTP methods",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-001he0tdhu7wre5.riker.replit.dev/api/tasks/search/api/tasks/search/test",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-001he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "search",
+                    "api",
+                    "tasks",
+                    "search",
+                    "test"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify API rejects unsupported HTTP methods",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-001he0tdhu7wre5.riker.replit.dev/api/tasks/search/api/tasks/search/test",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-001he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "search",
+                        "api",
+                        "tasks",
+                        "search",
+                        "test"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Wed, 18 Feb 2026 09:34:39 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "text/html; charset=utf-8"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Run this app to see the results here.</title>\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=IBM+Plex+Sans\">\n        <style>\n    body {\n      margin: 0;\n      height: 100vh;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      background: #1c2333;\n      font-family: \"IBM Plex Sans\", \"sans\";\n      color: #f5f9fc;\n    }\n\n    .title-box {\n      font-size: 12px;\n      inline-size: max-content;\n    }\n\n    .err-box {\n      padding: 1em;\n      max-width: 30em;\n      width: 100vw;\n    }\n\n    .message {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n\n    @media (max-width: 500px) {\n      .message {\n        flex-direction: column;\n        align-items: center;\n      }\n    }\n\n    .ascii {\n      font-size: 6px;\n      text-align: center;\n      opacity: .8;\n    }\n\n    .console {\n      background-color: #0e1628;\n      color: #fff;\n      font-family: \"IBM Plex Sans\", \"sans\";\n      padding: 1em;\n      margin: 1em;\n    }\n\n    .footer {\n      margin: 1em;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n    }\n\n    .link-icon {\n      margin-right: 20px;\n      margin-top: 4px;\n    }\n\n    a {\n      color: #c2c8cc;\n    }\n  </style>\n        <script>\n    var reload_timeout = setTimeout(function () {\n      window.location.reload();\n    }, 60000);\n  </script>\n    </head>\n    <body>\n        <div class=\"err-box\">\n            <div class=\"message\">\n                <pre class=\"ascii\">\n\n                                  -%%%%%%%%%%%##**++==---::....                                     \n                                  *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%##*+=--::...              \n                                  #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#*######******##*****+           \n                                 .#@%**+++**##%%@@@@@@@@@@@@@@@@@@%#*#*******************:          \n                                 .#@#*+.-*######%%%%#**+++++=+#@@%%#*#####***************+          \n                                 .#@#*=:=***####%%%%%%%%%%%%%#%@@%##*####*****************:         \n                                 .%@#*--+****######%%%%%%%%%%%@@@%##*#####***************+:         \n                                 :%@##-=+****########%%%%%%%%%@@@%##*####****************+.         \n                                 :%@#*-===+++**########%%%%%%@@@@%#**#####**************+*.         \n                                 :@@#*-====++++**###########%%@@@%#*######**************+*          \n                                 -@@#*--====+++++++*****#####%@@@%#*#######*************++          \n                                 -@@#*--======++++++++++*****#@@%%#*#####***************++          \n                                 -@%#*--========+++++++++++++#@@%%#*######**************++          \n                                 =@%#*--=================+===#@@%%#*##*****************++=          \n                                 =@%#*---====================#@@%#**#####*#************++=          \n                                 =@%#*----===================%@@%#*########************++-          \n                                 +@%%@#*+====================@@@%#*######*************+++-          \n                                 +@@@@@@@@@%%*==============-@@@%#*###*#**************+++:          \n                                 +@@@@@@@@@@@@@@@@@@@#+======@@@%#**##****************+++:          \n                                 *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%***#****************++++.          \n                                 *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%********************++++.          \n                                 *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%*******************+++++           \n                                 *@@@@@@@@@@@@@##@@@@@@@@@@@@@@%#******************+++++=           \n                                 #@%%@@@@@@@@@@@@@%#-:=*#%%@@@@%#*****************++++++=           \n                                .#@@@@@@@@@@@@@@@@@@@@@%=::*@@@%#*****************++++++=           \n                                 +##%%@@@@@@@@@@@@@@@@@@@@@@@@@%*****************++++++=-           \n                    .*%#*#%##:     .:+####%%%@@@@@@@@@@@@@@@@@@%*****************+++=+==-           \n                .:*@%##+**++%%#%%*-:.-++===**##%%%@@@@@@@@@@@@@%***************+++=+=+==:           \n              -*%%%##%*#+*****+#**##%%%#*=======++*##%%%%@@@@@%#************++*++++++-.             \n           -%@@#%#**+#+##+**=#*+#*+#+##+#%@@#+=========+####%%##*********+++++++++:.                \n       .=%@@@@##*+*#+##*+#+##***+**+**+#*+#**#%%@#++======-==+*=--=****++*+**+=:                 .:.\n     .*@@@@@@@%*##*###**+#***#+*#**#*+#***#=*+*#**%%%%#*+=====::++*****+***-:                    :. \n      +%@@@@@@@@@@########**#+#*+**+#*+*#*+#*+##+**+####%@@@#====++*****:                       ::  \n       -*##%@@@@@@@@@%########*+#+*#*+*#+#*****=#*+*#****%@@@@@@#-=+=:                         :-   \n         .:=*#%%@@@@@@@@@@%#########+*+##*+**+###******%@@@@@@%#*:......                      ::    \n              .*##%%@@@@@@@@@@%###*+####+*%%####****#@@@@@@@##**=--=-==++++.               .-=.     \n                 .-+#%%@@@@@@@@@@@%###*+##*=+##***%@@@@@@%#**+-.:..   ..:-==:         .:--:.        \n                     .-*#%%@@@@@@@@@@@%##**%%%%%@@@@@@@%#**+: .:=#**==-+---:.:----::::.             \n                         :+##%%@@@@@@@@@@@@@@@@@@@@@@##**+-. :#@#####***+--=.                       \n                            .-+#%%%@@@@@@@@@@@@@@@%#**+-. .+@@@@@@@@%%%@@@%-                        \n                                .:*##%%@@@@@@@@@%#**+: .=%@@@@@@@@@@@@@@##*=                        \n                                    .-*##%%@@@#**+=. .*@@@@@@@@@@@@@@%#*****.                       \n                                        :=*##**+-.   =@@@@@@@@@@@@@%#****+-.                        \n                                           .::.      +@@@@@@@@@@@#****+-.                           \n                                                      :+#%@@@@@#***+=.                              \n\n        </pre>\n                <div class=\"title-box\">\n                    <h1>Run this app to see the results here.</h1>\n                </div>\n            </div>\n            <div class=\"footer\">\n                <div class=\"link-icon\">\n                    <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                        <path\n            d=\"M6.66668 8.66666C6.95298 9.04942 7.31825 9.36612 7.73771 9.59529C8.15717 9.82446 8.62102 9.96074 9.09778 9.99489C9.57454 10.029 10.0531 9.96024 10.5009 9.79319C10.9487 9.62613 11.3554 9.36471 11.6933 9.02666L13.6933 7.02666C14.3005 6.39799 14.6365 5.55598 14.6289 4.68199C14.6213 3.808 14.2708 2.97196 13.6527 2.35394C13.0347 1.73591 12.1987 1.38535 11.3247 1.37775C10.4507 1.37016 9.60869 1.70614 8.98001 2.31333L7.83334 3.45333M9.33334 7.33333C9.04704 6.95058 8.68177 6.63388 8.26231 6.4047C7.84285 6.17553 7.37901 6.03925 6.90224 6.00511C6.42548 5.97096 5.94695 6.03975 5.49911 6.20681C5.05128 6.37387 4.6446 6.63528 4.30668 6.97333L2.30668 8.97333C1.69948 9.602 1.3635 10.444 1.3711 11.318C1.37869 12.192 1.72926 13.028 2.34728 13.6461C2.96531 14.2641 3.80135 14.6147 4.67534 14.6222C5.54933 14.6298 6.39134 14.2939 7.02001 13.6867L8.16001 12.5467\"\n            stroke=\"#C2C8CC\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n                    </svg>\n                </div>\n                <div class=\"repl-links\">\n                    <a href=\"https://replit.com\">Go to Replit</a>\n                </div>\n                <div></div>\n            </div>\n        </div>\n    </body>\n</html>"
+                }
+              ]
+            },
+            {
+              "name": "Verify task deletion with invalid ID",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/15",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "15"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Verify task deletion with invalid ID",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/15",
+                      "protocol": "https",
+                      "host": [
+                        "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                        "riker",
+                        "replit",
+                        "dev"
+                      ],
+                      "path": [
+                        "api",
+                        "tasks",
+                        "15"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Content-Length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 19 Feb 2026 08:33:26 GMT"
+                    },
+                    {
+                      "key": "Etag",
+                      "value": "W/\"27-lSjJxr94ylbIZllkF0weZiaNM9g\""
+                    },
+                    {
+                      "key": "Replit-Cluster",
+                      "value": "riker"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    },
+                    {
+                      "key": "X-Robots-Tag",
+                      "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"errMsg\": \"Cannot find task by id: 15\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Security Tests",
+      "item": [
+        {
+          "name": "Verify search endpoint handles special characters safely",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/@#$%^&*",
+              "protocol": "https",
+              "host": [
+                "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                "riker",
+                "replit",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "search",
+                "@"
+              ],
+              "hash": "$%^&*"
+            }
+          },
+          "response": [
+            {
+              "name": "Verify search endpoint handles special characters safely",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/@#$%^&*",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "search",
+                    "@"
+                  ],
+                  "hash": "$%^&*"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "2"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Feb 2026 13:22:50 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+                },
+                {
+                  "key": "Replit-Cluster",
+                  "value": "riker"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            }
+          ]
+        },
+        {
+          "name": "1. Verify search endpoint is protected against SQL injection",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/' OR 1=1 --",
+              "protocol": "https",
+              "host": [
+                "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                "riker",
+                "replit",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "search",
+                "' OR 1=1 --"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "1. Verify search endpoint is protected against SQL injection",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/%27%20OR%201%3D1%20--",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "search",
+                    "%27%20OR%201%3D1%20--"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "2"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 18 Feb 2026 08:31:42 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+                },
+                {
+                  "key": "Replit-Cluster",
+                  "value": "riker"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            }
+          ]
+        },
+        {
+          "name": "2. Verify search endpoint is protected against SQL injection",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/%27%20OR%201%3D1%20--",
+              "protocol": "https",
+              "host": [
+                "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                "riker",
+                "replit",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "search",
+                "%27%20OR%201%3D1%20--"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "2. Verify search endpoint is protected against SQL injection",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/%27%20OR%201%3D1%20--",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "search",
+                    "%27%20OR%201%3D1%20--"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "2"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 18 Feb 2026 08:31:42 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+                },
+                {
+                  "key": "Replit-Cluster",
+                  "value": "riker"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            }
+          ]
+        },
+        {
+          "name": "Verify search endpoint safely handles script injection payload",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIwYTIwYzVlYy02ZTU1LTQ0ZjktYTA3NS0wYWI2OGI5NWNhYmYiLCJpYXQiOiIwOS8yOS8yMDI1IDEwOjAyOjM5IiwiVXNlcklkIjoiOTc0OTAxN2QtNjQxNy00YjU5LWJiNDMtMDhkZGY2YTE1YjdhIiwiRW1haWwiOiJiYXJha292YUBnZXJnYW5hLmNvbSIsIlVzZXJOYW1lIjoiU3RvZXZhIiwiZXhwIjoxNzU5MTYxNzU5LCJpc3MiOiJJZGVhQ2VudGVyX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiSWRlYUNlbnRlcl9XZWJBUElfU29mdFVuaSJ9.m1ll4uG_LcwmASf1-pmKl0eyDxq38jT_INptLPbNyjo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/<script>alert(1)</script>",
+              "protocol": "https",
+              "host": [
+                "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                "riker",
+                "replit",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "search",
+                "<script>alert(1)<",
+                "script>"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Verify search endpoint safely handles script injection payload",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/search/<script>alert(1)</script>",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "search",
+                    "<script>alert(1)<",
+                    "script>"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "189"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'none'"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/html; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 18 Feb 2026 08:48:10 GMT"
+                },
+                {
+                  "key": "Replit-Cluster",
+                  "value": "riker"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                }
+              ],
+              "cookie": [],
+              "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Cannot GET /api/tasks/search/%3Cscript%3Ealert(1)%3C/script%3E</pre>\n    </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "name": "API response headers should not expose sensitive information",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "API response headers should not expose sensitive information",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/2",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "214"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Feb 2026 12:50:42 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"d6-aK6rUocAE8FcfmOO2n61/0X/3mI\""
+                },
+                {
+                  "key": "Replit-Cluster",
+                  "value": "riker"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 2,\n    \"title\": \"Home page\",\n    \"description\": \"Create the [Home] page and list tasks count by board\",\n    \"board\": {\n        \"id\": 1003,\n        \"name\": \"Done\"\n    },\n    \"dateCreated\": \"2026-02-23T12:42:14.232Z\",\n    \"dateModified\": \"2026-02-23T12:42:14.232Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Verify API handles duplicate requests safely",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{vault:github-personal-access-token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"TEST\",\r\n    \"description\": \"Verify API handles duplicate requests safely\",\r\n    \"board\": \"Open\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+              "protocol": "https",
+              "host": [
+                "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                "riker",
+                "replit",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Verify API handles duplicate requests safely",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"TEST\",\r\n    \"description\": \"Verify API handles duplicate requests safely\",\r\n    \"board\": \"Open\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "231"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 18 Feb 2026 12:39:46 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"e7-C9UerCHYKvbMq30n8VsIHPiI1Bw\""
+                },
+                {
+                  "key": "Replit-Cluster",
+                  "value": "riker"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Task added.\",\n    \"task\": {\n        \"id\": 10,\n        \"title\": \"TEST\",\n        \"description\": \"Verify API handles duplicate requests safely\",\n        \"board\": {\n            \"id\": 1001,\n            \"name\": \"Open\"\n        },\n        \"dateCreated\": \"2026-02-18T12:39:46.252Z\",\n        \"dateModified\": \"2026-02-18T12:39:46.252Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Verify API handles malformed JSON safely",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"New Task\",\r\n  \"description\": \"Test malformed JSON\"  ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+              "protocol": "https",
+              "host": [
+                "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                "riker",
+                "replit",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Verify API handles malformed JSON safely",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"New Task\",\r\n  \"description\": \"Test malformed JSON\"  ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks",
+                  "protocol": "https",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "905"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'none'"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/html; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Feb 2026 13:26:55 GMT"
+                },
+                {
+                  "key": "Replit-Cluster",
+                  "value": "riker"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                }
+              ],
+              "cookie": [],
+              "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>SyntaxError: Unexpected end of JSON input\n            <br> &nbsp; &nbsp;at JSON.parse (&lt;anonymous&gt;)\n            <br> &nbsp; &nbsp;at parse (/home/runner/workspace/node_modules/body-parser/lib/types/json.js:89:19)\n            <br> &nbsp; &nbsp;at /home/runner/workspace/node_modules/body-parser/lib/read.js:121:18\n            <br> &nbsp; &nbsp;at invokeCallback (/home/runner/workspace/node_modules/raw-body/index.js:224:16)\n            <br> &nbsp; &nbsp;at done (/home/runner/workspace/node_modules/raw-body/index.js:213:7)\n            <br> &nbsp; &nbsp;at IncomingMessage.onEnd (/home/runner/workspace/node_modules/raw-body/index.js:273:7)\n            <br> &nbsp; &nbsp;at IncomingMessage.emit (events.js:314:20)\n            <br> &nbsp; &nbsp;at endReadableNT (_stream_readable.js:1241:12)\n            <br> &nbsp; &nbsp;at processTicksAndRejections (internal/process/task_queues.js:84:21)\n        </pre>\n    </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "name": "Verify data manipulation endpoints reject HTTP requests",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Home Page Updated\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/2",
+              "protocol": "http",
+              "host": [
+                "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                "riker",
+                "replit",
+                "dev"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Verify data manipulation endpoints reject HTTP requests",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Home Page Updated\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5.riker.replit.dev/api/tasks/2",
+                  "protocol": "http",
+                  "host": [
+                    "88c63e94-4c93-49f4-bac2-b5555ab9f948-00-1he0tdhu7wre5",
+                    "riker",
+                    "replit",
+                    "dev"
+                  ],
+                  "path": [
+                    "api",
+                    "tasks",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "214"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Feb 2026 09:07:07 GMT"
+                },
+                {
+                  "key": "Etag",
+                  "value": "W/\"d6-w9sfSpr3JMCcovIubI3t49X/eG8\""
+                },
+                {
+                  "key": "Replit-Cluster",
+                  "value": "riker"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                },
+                {
+                  "key": "X-Robots-Tag",
+                  "value": "none, noindex, noarchive, nofollow, nositelinkssearchbox, noimageindex"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 2,\n    \"title\": \"Home page\",\n    \"description\": \"Create the [Home] page and list tasks count by board\",\n    \"board\": {\n        \"id\": 1003,\n        \"name\": \"Done\"\n    },\n    \"dateCreated\": \"2026-02-23T08:42:52.953Z\",\n    \"dateModified\": \"2026-02-23T08:42:52.953Z\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    }
+  ]
+}

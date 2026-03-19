@@ -1,0 +1,902 @@
+{
+  "info": {
+    "_postman_id": "fda7affa-94a3-4162-998a-e305bf944b12",
+    "name": "Idea Center",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14238187"
+  },
+  "item": [
+    {
+      "name": "Methods supported",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userName\": \"Stoeva\",\r\n    \"email\": \"stoeva@gergana.com\",\r\n    \"password\": \"Geri123\",\r\n    \"rePassword\": \"Geri123\",\r\n    \"acceptedAgreement\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Info/Methods",
+          "protocol": "http",
+          "host": [
+            "softuni-qa-loadbalancer-2137572849",
+            "eu-north-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "port": "84",
+          "path": [
+            "api",
+            "Info",
+            "Methods"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Methods supported",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userName\": \"Stoeva\",\r\n    \"email\": \"stoeva@gergana.com\",\r\n    \"password\": \"Geri123\",\r\n    \"rePassword\": \"Geri123\",\r\n    \"acceptedAgreement\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Info/Methods",
+              "protocol": "http",
+              "host": [
+                "softuni-qa-loadbalancer-2137572849",
+                "eu-north-1",
+                "elb",
+                "amazonaws",
+                "com"
+              ],
+              "port": "84",
+              "path": [
+                "api",
+                "Info",
+                "Methods"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 10:01:54 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"userLogin\": {\n        \"route\": \"/api/User/Authentication\",\n        \"method\": \"POST\"\n    },\n    \"userRegister\": {\n        \"route\": \"/api/User/Create\",\n        \"method\": \"POST\"\n    },\n    \"createIdea\": {\n        \"route\": \"/api/Idea/Create\",\n        \"method\": \"POST\"\n    },\n    \"getAllIdeas\": {\n        \"route\": \"/api/Idea/All\",\n        \"method\": \"GET\"\n    },\n    \"editIdea\": {\n        \"route\": \"/api/Idea/Edit\",\n        \"method\": \"PUT\"\n    },\n    \"deleteIdea\": {\n        \"route\": \"/api/Idea/Delete\",\n        \"method\": \"DELETE\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "All Idea",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/All",
+          "protocol": "http",
+          "host": [
+            "softuni-qa-loadbalancer-2137572849",
+            "eu-north-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "port": "84",
+          "path": [
+            "api",
+            "Idea",
+            "All"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "All Idea",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/All",
+              "protocol": "http",
+              "host": [
+                "softuni-qa-loadbalancer-2137572849",
+                "eu-north-1",
+                "elb",
+                "amazonaws",
+                "com"
+              ],
+              "port": "84",
+              "path": [
+                "api",
+                "Idea",
+                "All"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 11:38:00 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"66abe34a-0058-4670-1ec9-08ddfd238560\",\n        \"title\": \"UPDATED Urban Oasis: A Zen Escape on Your Terrace\",\n        \"description\": \"Transform your terrace into a serene urban oasis where nature and modern design coexist. Imagine soft wooden decking underfoot, surrounded by lush vertical gardens and potted greenery, creating a natural cocoon.\",\n        \"url\": \"https://i.pinimg.com/736x/b5/3a/69/b53a69a0aea963b9c289ea1c1911b22b.jpg\",\n        \"authorUsername\": \"Stoeva\",\n        \"createdOn\": \"2025-09-29T10:26:52.0878625\",\n        \"updatedOn\": \"2025-09-29T11:37:50.7558715\"\n    },\n    {\n        \"id\": \"96f488e8-c074-498e-1ece-08ddfd238560\",\n        \"title\": \"Urban Oasis: A Zen Escape on Your Terrace\",\n        \"description\": \"Transform your terrace into a serene urban oasis where nature and modern design coexist. Imagine soft wooden decking underfoot, surrounded by lush vertical gardens and potted greenery, creating a natural cocoon.\",\n        \"url\": \"https://i.pinimg.com/736x/b5/3a/69/b53a69a0aea963b9c289ea1c1911b22b.jpg\",\n        \"authorUsername\": \"Stoeva\",\n        \"createdOn\": \"2025-09-29T11:33:44.1344834\",\n        \"updatedOn\": \"2025-09-29T11:33:44.1344854\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userName\": \"Stoeva\",\r\n    \"email\": \"barakova@gergana.com\",\r\n    \"password\": \"Geri123\",\r\n    \"rePassword\": \"Geri123\",\r\n    \"acceptedAgreement\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/User/Create",
+          "protocol": "http",
+          "host": [
+            "softuni-qa-loadbalancer-2137572849",
+            "eu-north-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "port": "84",
+          "path": [
+            "api",
+            "User",
+            "Create"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create User",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userName\": \"GerganaS\",\r\n    \"email\": \"barakova@g.com\",\r\n    \"password\": \"Geri123\",\r\n    \"rePassword\": \"Geri123\",\r\n    \"acceptedAgreement\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/User/Create",
+              "protocol": "http",
+              "host": [
+                "softuni-qa-loadbalancer-2137572849",
+                "eu-north-1",
+                "elb",
+                "amazonaws",
+                "com"
+              ],
+              "port": "84",
+              "path": [
+                "api",
+                "User",
+                "Create"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 10:05:37 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"msg\": \"Account created successful\",\n    \"email\": \"barakova@g.com\",\n    \"username\": \"GerganaS\",\n    \"accessToken\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Authentication Token",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"barakova@gergana.com\",\r\n    \"password\": \"Geri123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/User/Authentication",
+          "protocol": "http",
+          "host": [
+            "softuni-qa-loadbalancer-2137572849",
+            "eu-north-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "port": "84",
+          "path": [
+            "api",
+            "User",
+            "Authentication"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Authentication Token",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"barakova@gergana.com\",\r\n    \"password\": \"Geri123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/User/Authentication",
+              "protocol": "http",
+              "host": [
+                "softuni-qa-loadbalancer-2137572849",
+                "eu-north-1",
+                "elb",
+                "amazonaws",
+                "com"
+              ],
+              "port": "84",
+              "path": [
+                "api",
+                "User",
+                "Authentication"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 10:02:39 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"email\": \"barakova@gergana.com\",\n    \"password\": \"Geri123\",\n    \"accessToken\": \"{{vault:json-web-token}}\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Idea",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Urban Oasis: A Zen Escape on Your Terrace\",\r\n    \"url\": \"https://i.pinimg.com/736x/b5/3a/69/b53a69a0aea963b9c289ea1c1911b22b.jpg\",\r\n    \"description\": \"Transform your terrace into a serene urban oasis where nature and modern design coexist. Imagine soft wooden decking underfoot, surrounded by lush vertical gardens and potted greenery, creating a natural cocoon.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/Create",
+          "protocol": "http",
+          "host": [
+            "softuni-qa-loadbalancer-2137572849",
+            "eu-north-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "port": "84",
+          "path": [
+            "api",
+            "Idea",
+            "Create"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Idea",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Urban Oasis: A Zen Escape on Your Terrace\",\r\n    \"url\": \"https://i.pinimg.com/736x/b5/3a/69/b53a69a0aea963b9c289ea1c1911b22b.jpg\",\r\n    \"description\": \"Transform your terrace into a serene urban oasis where nature and modern design coexist. Imagine soft wooden decking underfoot, surrounded by lush vertical gardens and potted greenery, creating a natural cocoon.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/Create",
+              "protocol": "http",
+              "host": [
+                "softuni-qa-loadbalancer-2137572849",
+                "eu-north-1",
+                "elb",
+                "amazonaws",
+                "com"
+              ],
+              "port": "84",
+              "path": [
+                "api",
+                "Idea",
+                "Create"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 11:33:44 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"msg\": \"Successfully created!\",\n    \"idea\": {\n        \"title\": \"Urban Oasis: A Zen Escape on Your Terrace\",\n        \"url\": \"https://i.pinimg.com/736x/b5/3a/69/b53a69a0aea963b9c289ea1c1911b22b.jpg\",\n        \"description\": \"Transform your terrace into a serene urban oasis where nature and modern design coexist. Imagine soft wooden decking underfoot, surrounded by lush vertical gardens and potted greenery, creating a natural cocoon.\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Edit Idea",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"UPDATED Urban Oasis: A Zen Escape on Your Terrace\",\r\n    \"description\": \"Transform your terrace into a serene urban oasis where nature and modern design coexist. Imagine soft wooden decking underfoot, surrounded by lush vertical gardens and potted greenery, creating a natural cocoon.\",\r\n    \"url\": \"https://i.pinimg.com/736x/b5/3a/69/b53a69a0aea963b9c289ea1c1911b22b.jpg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/Edit?ideaId=66abe34a-0058-4670-1ec9-08ddfd238560",
+          "protocol": "http",
+          "host": [
+            "softuni-qa-loadbalancer-2137572849",
+            "eu-north-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "port": "84",
+          "path": [
+            "api",
+            "Idea",
+            "Edit"
+          ],
+          "query": [
+            {
+              "key": "ideaId",
+              "value": "66abe34a-0058-4670-1ec9-08ddfd238560"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Edit Idea",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"UPDATED Urban Oasis: A Zen Escape on Your Terrace\",\r\n    \"description\": \"Transform your terrace into a serene urban oasis where nature and modern design coexist. Imagine soft wooden decking underfoot, surrounded by lush vertical gardens and potted greenery, creating a natural cocoon.\",\r\n    \"url\": \"https://i.pinimg.com/736x/b5/3a/69/b53a69a0aea963b9c289ea1c1911b22b.jpg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/Edit?ideaId=66abe34a-0058-4670-1ec9-08ddfd238560",
+              "protocol": "http",
+              "host": [
+                "softuni-qa-loadbalancer-2137572849",
+                "eu-north-1",
+                "elb",
+                "amazonaws",
+                "com"
+              ],
+              "port": "84",
+              "path": [
+                "api",
+                "Idea",
+                "Edit"
+              ],
+              "query": [
+                {
+                  "key": "ideaId",
+                  "value": "66abe34a-0058-4670-1ec9-08ddfd238560"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 11:19:51 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"msg\": \"Edited successfully\",\n    \"idea\": {\n        \"title\": \"UPDATED Urban Oasis: A Zen Escape on Your Terrace\",\n        \"url\": \"https://i.pinimg.com/736x/b5/3a/69/b53a69a0aea963b9c289ea1c1911b22b.jpg\",\n        \"description\": \"Transform your terrace into a serene urban oasis where nature and modern design coexist. Imagine soft wooden decking underfoot, surrounded by lush vertical gardens and potted greenery, creating a natural cocoon.\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Edit Idea 2",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Floating Garden Terrace\",\r\n    \"url\": \"https://i.pinimg.com/736x/a3/fc/e5/a3fce581b7155b8170c7bb046ef0614a.jpg\",\r\n    \"description\": \"A terrace design that seamlessly blends greenery with modern minimalism, creating a serene outdoor escape. Elevated planters and transparent railings provide an airy, open feeling while maximizing natural light.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/Edit?ideaId=66abe34a-0058-4670-1ec9-08ddfd238560",
+          "protocol": "http",
+          "host": [
+            "softuni-qa-loadbalancer-2137572849",
+            "eu-north-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "port": "84",
+          "path": [
+            "api",
+            "Idea",
+            "Edit"
+          ],
+          "query": [
+            {
+              "key": "ideaId",
+              "value": "66abe34a-0058-4670-1ec9-08ddfd238560"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Edit Idea 2",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Floating Garden Terrace\",\r\n    \"url\": \"https://i.pinimg.com/736x/a3/fc/e5/a3fce581b7155b8170c7bb046ef0614a.jpg\",\r\n    \"description\": \"A terrace design that seamlessly blends greenery with modern minimalism, creating a serene outdoor escape. Elevated planters and transparent railings provide an airy, open feeling while maximizing natural light.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/Edit?ideaId=66abe34a-0058-4670-1ec9-08ddfd238560",
+              "protocol": "http",
+              "host": [
+                "softuni-qa-loadbalancer-2137572849",
+                "eu-north-1",
+                "elb",
+                "amazonaws",
+                "com"
+              ],
+              "port": "84",
+              "path": [
+                "api",
+                "Idea",
+                "Edit"
+              ],
+              "query": [
+                {
+                  "key": "ideaId",
+                  "value": "66abe34a-0058-4670-1ec9-08ddfd238560"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 11:29:53 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"msg\": \"Edited successfully\",\n    \"idea\": {\n        \"title\": \"Floating Garden Terrace\",\n        \"url\": \"https://i.pinimg.com/736x/a3/fc/e5/a3fce581b7155b8170c7bb046ef0614a.jpg\",\n        \"description\": \"A terrace design that seamlessly blends greenery with modern minimalism, creating a serene outdoor escape. Elevated planters and transparent railings provide an airy, open feeling while maximizing natural light.\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Idea",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/Delete?ideaID=92a26a9e-5234-47e0-1eca-08ddfd238560",
+          "protocol": "http",
+          "host": [
+            "softuni-qa-loadbalancer-2137572849",
+            "eu-north-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "port": "84",
+          "path": [
+            "api",
+            "Idea",
+            "Delete"
+          ],
+          "query": [
+            {
+              "key": "ideaID",
+              "value": "92a26a9e-5234-47e0-1eca-08ddfd238560"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Idea",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:84/api/Idea/Delete?ideaID=92a26a9e-5234-47e0-1eca-08ddfd238560",
+              "protocol": "http",
+              "host": [
+                "softuni-qa-loadbalancer-2137572849",
+                "eu-north-1",
+                "elb",
+                "amazonaws",
+                "com"
+              ],
+              "port": "84",
+              "path": [
+                "api",
+                "Idea",
+                "Delete"
+              ],
+              "query": [
+                {
+                  "key": "ideaID",
+                  "value": "92a26a9e-5234-47e0-1eca-08ddfd238560"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 11:22:08 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "The idea is deleted!"
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{vault:authorization-secret}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

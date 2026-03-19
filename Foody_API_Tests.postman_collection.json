@@ -1,0 +1,759 @@
+{
+  "info": {
+    "_postman_id": "35add81a-dbfa-4a1b-ae68-6a415936272f",
+    "name": "Foody",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14238187"
+  },
+  "item": [
+    {
+      "name": "Methods Supported",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/Info/Methods",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "Info",
+            "Methods"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Methods Supported",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/Info/Methods",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "Info",
+                "Methods"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 08:09:10 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "470"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"userLogin\": {\n        \"route\": \"/api/User/Authentication\",\n        \"method\": \"POST\"\n    },\n    \"userRegister\": {\n        \"route\": \"/api/User/Create\",\n        \"method\": \"POST\"\n    },\n    \"createIdea\": {\n        \"route\": \"/api/Food/Create\",\n        \"method\": \"POST\"\n    },\n    \"getAllIdeas\": {\n        \"route\": \"/api/Food/All\",\n        \"method\": \"GET\"\n    },\n    \"editIdea\": {\n        \"route\": \"/api/Food/Edit/:foodId\",\n        \"method\": \"PATCH\"\n    },\n    \"deleteIdea\": {\n        \"route\": \"/api/Food/Delete/:foodId\",\n        \"method\": \"DELETE\"\n    },\n    \"searchIdeas\": {\n        \"route\": \"/api/Food/Search\",\n        \"method\": \"GET\",\n        \"queryParameters\": [\n            \"?keyword={foodName}\"\n        ]\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Food Search",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/Food/Search?keyword=Pasta",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "Food",
+            "Search"
+          ],
+          "query": [
+            {
+              "key": "keyword",
+              "value": "Pasta"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Food Search",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/Food/Search?keyword=Pasta",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "Food",
+                "Search"
+              ],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "Pasta"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 08:57:03 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "469"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"c2238601-42e0-4ae2-2f74-08ddff316f0f\",\n        \"name\": \"Pasta\",\n        \"description\": \"Creamy, savory, and comforting, Pasta Carbonara combines al dente pasta with eggs, cheese, pancetta, and black pepper for a rich Italian classic.\",\n        \"url\": null\n    },\n    {\n        \"id\": \"698a2ea8-0753-4974-2f77-08ddff316f0f\",\n        \"name\": \"Pasta\",\n        \"description\": \"Creamy, savory, and comforting, Pasta Carbonara combines al dente pasta with eggs, cheese, pancetta, and black pepper for a rich Italian classic.\",\n        \"url\": null\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "List all foods",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/Food/All",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "Food",
+            "All"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "List all foods",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/Food/All",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "Food",
+                "All"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 09:55:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "631"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"698a2ea8-0753-4974-2f77-08ddff316f0f\",\n        \"name\": \"Pasta\",\n        \"description\": \"Spaghetti Carbonara is a traditional Italian pasta dish made with eggs, hard cheese, pancetta, and freshly ground black pepper. The sauce is creamy and rich, created by tossing the hot pasta with the egg and cheese mixture. It is a simple yet flavorful recipe, often served as a comforting and classic meal.\",\n        \"url\": null\n    },\n    {\n        \"id\": \"1bdb524c-ffb5-4cf9-2f78-08ddff316f0f\",\n        \"name\": \"Pasta\",\n        \"description\": \"Creamy, savory, and comforting, Pasta Carbonara combines al dente pasta with eggs, cheese, pancetta, and black pepper for a rich Italian classic.\",\n        \"url\": null\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Create Food",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Pasta\",\r\n    \"description\": \"Creamy, savory, and comforting, Pasta Carbonara combines al dente pasta with eggs, cheese, pancetta, and black pepper for a rich Italian classic.\",\r\n    \"picture\": \"https://assets.kulinaria.bg/attachments/pictures-images/0000/1655/MAIN-spageti-karbonara.jpg?1431937339\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/Food/Create",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "Food",
+            "Create"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Food",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Pasta\",\r\n    \"description\": \"Creamy, savory, and comforting, Pasta Carbonara combines al dente pasta with eggs, cheese, pancetta, and black pepper for a rich Italian classic.\",\r\n    \"picture\": \"https://assets.kulinaria.bg/attachments/pictures-images/0000/1655/MAIN-spageti-karbonara.jpg?1431937339\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/Food/Create",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "Food",
+                "Create"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 08:57:48 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "49"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            },
+            {
+              "key": "Location",
+              "value": "/Food/Create/1bdb524c-ffb5-4cf9-2f78-08ddff316f0f"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"foodId\": \"1bdb524c-ffb5-4cf9-2f78-08ddff316f0f\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Access Token",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Barakova\",\r\n    \"password\": \"123456789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/User/Authentication",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "User",
+            "Authentication"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Access Token",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Barakova\",\r\n    \"password\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/User/Authentication",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "User",
+                "Authentication"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 08:14:03 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "519"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"username\": \"Barakova\",\n    \"password\": \"123456789\",\n    \"accessToken\": \"{{vault:json-web-token}}\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userName\": \"GerganaStoeva\",\r\n    \"firstName\": \"Gergana\",\r\n    \"midName\": \"Vasileva\",\r\n    \"lastName\": \"Stoeva\",\r\n    \"email\": \"barakova@abv.com\",\r\n    \"password\": \"123456789\",\r\n    \"rePassword\": \"123456789\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/User/Create",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "User",
+            "Create"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create User",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userName\": \"GerganaStoeva\",\r\n    \"firstName\": \"Gergana\",\r\n    \"midName\": \"Vasileva\",\r\n    \"lastName\": \"Stoeva\",\r\n    \"email\": \"barakova@abv.com\",\r\n    \"password\": \"123456789\",\r\n    \"rePassword\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/User/Create",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "User",
+                "Create"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 08:16:53 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "109"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"msg\": \"Account created successful\",\n    \"email\": \"barakova@abv.com\",\n    \"username\": \"GerganaStoeva\",\n    \"accessToken\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Edit Food",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "content-type": true
+        }
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json-patch+json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/description\",\r\n    \"value\": \"Spaghetti Carbonara is a traditional Italian pasta dish made with eggs, hard cheese, pancetta, and freshly ground black pepper. The sauce is creamy and rich, created by tossing the hot pasta with the egg and cheese mixture. It is a simple yet flavorful recipe, often served as a comforting and classic meal.\"\r\n  }\r\n]\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/Food/Edit/698a2ea8-0753-4974-2f77-08ddff316f0f",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "Food",
+            "Edit",
+            "698a2ea8-0753-4974-2f77-08ddff316f0f"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Edit Food",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json-patch+json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/description\",\r\n    \"value\": \"Spaghetti Carbonara is a traditional Italian pasta dish made with eggs, hard cheese, pancetta, and freshly ground black pepper. The sauce is creamy and rich, created by tossing the hot pasta with the egg and cheese mixture. It is a simple yet flavorful recipe, often served as a comforting and classic meal.\"\r\n  }\r\n]\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/api/Food/Edit/698a2ea8-0753-4974-2f77-08ddff316f0f",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "Food",
+                "Edit",
+                "698a2ea8-0753-4974-2f77-08ddff316f0f"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 09:30:39 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "77"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"msg\": \"Successfully edited\",\n    \"foodId\": \"698a2ea8-0753-4974-2f77-08ddff316f0f\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Food",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{vault:authorization-secret}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/api/Food/Delete/b6df8a24-cdaa-471b-6588-08ddfb64d5cb",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "Food",
+            "Delete",
+            "b6df8a24-cdaa-471b-6588-08ddfb64d5cb"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Food",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/api/Food/Delete/b6df8a24-cdaa-471b-6588-08ddfb64d5cb",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "api",
+                "Food",
+                "Delete",
+                "b6df8a24-cdaa-471b-6588-08ddfb64d5cb"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 29 Sep 2025 09:22:10 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "31"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"msg\": \"Deleted successfully!\"\n}"
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    }
+  ]
+}
