@@ -63,7 +63,7 @@ Example: Authorization: Bearer {{accessToken}}
 ### ✅ Get All Ideas (200 OK)
 This test verifies that the API successfully returns a list of all ideas.
 
-<img src="screenshots/ideacenter/get-all-ideas.png" width="600">
+<img src="ideacenter/screenshots/get-all-ideas.png" width="600">
 
 ---
 
