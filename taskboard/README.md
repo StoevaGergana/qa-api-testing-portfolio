@@ -1,14 +1,23 @@
-#  About TaskBoard API TestSuite
+# About TaskBoard API TestSuite
 
 ## Project Overview
 TaskBoard is a project management application that allows users to create, update, move, and manage tasks across boards.  
-This API TestSuite covers **functional, negative, and security tests**, providing a comprehensive overview of the application's behavior.
+This API TestSuite covers **functional, negative, and security testing**, demonstrating a complete QA workflow.
 
-**Deployed Application:** [TaskBoard on Repl.it](https://replit.com/@StoevaGergana/TaskBoardV01#index.js)
+**Deployed Application:**  
+[TaskBoard on Repl.it](https://replit.com/@StoevaGergana/TaskBoardV01#index.js)
 
 ---
 
-## Test Coverage
+## 🔧 Tools Used
+- Postman (API testing)
+- Jira (bug tracking)
+- TestRail (test case management)
+- GitHub (documentation)
+
+---
+
+## 🧪 Test Coverage
 
 ### Functional Tests
 
@@ -19,73 +28,91 @@ This API TestSuite covers **functional, negative, and security tests**, providin
 | GET | Verify GET /api/boards returns all boards | 200 OK |
 | GET | Verify GET /api/tasks returns all tasks | 200 OK |
 | GET | Verify GET /api/tasks/:id returns correct task | 200 OK |
-| GET | Verify task search by keyword returns matching tasks | 200 OK |
-| GET | Verify tasks filtered by board name | 200 OK |
-| GET | Verify search endpoint responds within acceptable time | 200 OK / acceptable response time |
-| POST | Verify task creation with valid data | 201 Created |
-| POST | Create Task | 201 Created |
-| POST | Create Task 2 | 201 Created |
-| PATCH | Verify task update with valid data | 200 OK |
-| PATCH | Verify task can be moved between valid boards | 200 OK |
-| DEL | Verify task deletion with valid ID | 200 OK |
+| POST | Create Task with valid data | 201 Created |
+| PATCH | Update Task with valid data | 200 OK |
+| DELETE | Delete existing task | 200 OK |
+
+---
 
 #### Negative Tests
 | Request | Description | Expected Result |
 |---------|-------------|----------------|
-| GET | Verify API response for non-existing task ID | 404 Not Found |
-| GET | Verify task search with non-existing keyword | 200 OK (empty result) |
-| GET | Verify search endpoint handles excessively long input safely | 400 Bad Request |
-| GET | Verify filtering by invalid board | 400 Bad Request |
-| GET | Verify API handles rapid repeated requests safely | 429 Too Many Requests / safe handling |
-| POST | Verify task creation fails without title | 400 Bad Request |
-| PATCH | Verify task update with invalid ID fails | 404 Not Found |
-| PATCH | Verify task can be moved between invalid boards | 400 Bad Request |
-| PUT | Verify API rejects unsupported HTTP methods | 405 Method Not Allowed |
-| DEL | Verify task deletion with invalid ID | 404 Not Found |
+| POST | Create Task without title | 400 Bad Request |
+| GET | Non-existing task ID | 404 Not Found |
+| PATCH | Update task with invalid ID | 404 Not Found |
+| DELETE | Delete non-existing task | 404 Not Found |
+
+---
 
 ### Security Tests
-| Request | Description | Expected Result |
-|---------|-------------|----------------|
-| GET | Verify search endpoint handles special characters safely | 200 OK |
-| GET | Verify search endpoint is protected against SQL injection | 400/secure response |
-| GET | Verify search endpoint safely handles script injection payload | 400/secure response |
-| GET | API response headers should not expose sensitive information | 200 OK / secure headers |
-| POST | Verify API handles duplicate requests safely | 200 OK / idempotent handling |
-| POST | Verify API handles malformed JSON safely | 400 Bad Request |
-| PATCH | Verify data manipulation endpoints reject unsupported HTTP requests | 405 Method Not Allowed |
+| Test | Description |
+|------|------------|
+| SQL Injection | Validate API handles malicious input safely |
+| Script Injection | Prevent execution of injected scripts |
+| Invalid Input | Ensure proper validation and error handling |
 
 ---
 
-## How to Run
-1. Import the collection into Postman
-2. Select the correct environment (if any)
-3. Run requests individually or as a **collection runner**
-4. Observe responses and test assertions
+## 🧾 Test Cases & Execution
+
+Test cases were designed and executed using TestRail and Excel.
+
+📄 [Test Cases](test-cases/taskboard-test-cases.xlsx)  
+📄 [Test Run Results](test-cases/taskboard-test-run.xlsx)
+
+The test run includes execution results (Pass/Fail) for functional and negative scenarios.
 
 ---
-## Folder Structure in Postman
 
-📁 Functional Tests: 📁 Positive Tests 📁 Negative Tests
+## 🐞 Bug Tracking (Jira)
 
-📁 Security Tests
+Bug reports were documented and tracked in Jira.
 
-## Screenshots
+<img src="screenshots/jira/jira-bug-example.png" width="700">
+
+---
+
+## 📊 Test Management (TestRail)
+
+Test cases and execution results were organized in TestRail.
+
+<img src="screenshots/testrail/testrail-testcases.png" width="700">
+
+---
+
+## 📸 API Testing (Postman)
 
 ### ✅ Create Task - Success (201 Created)
-This test verifies that the API successfully creates a new task when valid data is provided and returns the correct status code and response body.
+This test verifies successful task creation with valid data.
 
-<img src="screenshots/1_create_task_valid_data.png" width="600">
+<img src="screenshots/postman/create-task-success.png" width="600">
 
+---
 
 ### ❌ Create Task - Missing Title (400 Bad Request)
-This test verifies that the API correctly validates required fields and returns an error when the title is missing.
+This test verifies validation of required fields.
 
-<img src="screenshots/2_create_task_missing_title.png" width="600">
+<img src="screenshots/postman/create-task-fail.png" width="600">
 
+---
 
 ### 🔐 SQL Injection Test
-This test verifies that the API is protected against SQL injection attacks and properly handles malicious input without exposing or compromising data.
+This test verifies protection against malicious input.
 
-<img src="screenshots/3_sql_injection_search.png" width="600">
+<img src="screenshots/postman/sql-injection.png" width="600">
 
+---
 
+## ▶️ How to Run
+1. Import the collection into Postman  
+2. Set environment variables  
+3. Run requests individually or via Collection Runner  
+4. Validate responses and assertions  
+
+---
+
+## 💡 Key Highlights
+- End-to-end QA workflow (API + Test Cases + Bug Tracking)  
+- Functional, negative, and security testing  
+- Clear and structured documentation  
+- Real-world testing approach  
