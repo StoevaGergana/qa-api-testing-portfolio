@@ -58,7 +58,7 @@ This API TestSuite covers **functional, negative, and security testing**, demons
 Test cases were designed and executed using TestRail and Excel.
 
 📄 [Test Cases](test-cases/taskboard-test-cases.xlsx)  
-📄 [Test Run Results](test-cases/taskboard-test-run.xlsx)
+📄 [Test Run Results](test-cases/taskboard-testrun.xlsx)
 
 The test run includes execution results (Pass/Fail) for functional and negative scenarios.
 
