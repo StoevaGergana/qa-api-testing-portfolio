@@ -71,11 +71,33 @@ Bug reports were documented and tracked in Jira.
 <img src="screenshots/jira/jira-bugs.png" width="700">
 
 ---
+### 🐞 Example Bug Report
+
+<img src="screenshots/jira/JIRA-BUGS1.png" width="700">
+
+This bug demonstrates that data manipulation endpoints fail to reject unsupported HTTP requests, indicating missing validation and potential security vulnerabilities.
+
+---
+
+### 🔐 Security Test - Response Headers Validation
+
+<img src="screenshots/jira/JIRABUGS2.png" width="700">
+
+This test verifies that API response headers do not expose sensitive information such as server details, internal technologies, or security-related data.
+
+The API should return only necessary headers and avoid revealing implementation details that could be exploited.
+
+---
 
 ## 📊 Test Management (TestRail)
 
 Test cases and execution results were organized in TestRail.
 
+<img src="screenshots/testrail/TESTRAIL_F.png" width="700">
+
+<img src="screenshots/testrail/TESTRAIL_CASE1.png" width="700">
+
+<img src="screenshots/testrail/TESTRAIL_CASE1_2.png" width="700">
 ---
 
 ## 📸 API Testing (Postman)
