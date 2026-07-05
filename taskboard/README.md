@@ -2,7 +2,7 @@
 
 ## Project Overview
 TaskBoard is a project management application that allows users to create, update, move, and manage tasks across boards.  
-This API TestSuite covers **functional, negative, and security testing**, demonstrating a complete QA workflow.
+This project covers **functional, negative, and security testing**, demonstrating a complete QA workflow.
 
 **Deployed Application:**  
 [TaskBoard on Repl.it](https://replit.com/@StoevaGergana/TaskBoardV01#index.js)
