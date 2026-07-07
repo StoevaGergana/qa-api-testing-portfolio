@@ -57,8 +57,8 @@ This project covers **functional testing, browser and responsive compatibility t
 
 Test cases were designed and executed using TestRail and Excel.
 
-📄 [Test Cases](taskboard-test-cases(5).xlsx)  
-📄 [Test Run Results](taskboard-testrun(5).xlsx)
+📄 [Test Cases](taskboard-test-cases.xlsx)  
+📄 [Test Run Results](taskboard-testrun.xlsx)
 
 The test run includes execution results (Pass/Fail) for functional and negative scenarios.
 
