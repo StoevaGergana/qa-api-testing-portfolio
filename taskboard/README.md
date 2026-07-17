@@ -68,6 +68,8 @@ The test run includes execution results (Pass/Fail) for functional and negative 
 
 Bug reports were documented and tracked in Jira.
 
+<img src="screenshots/jira/task_board_bug_report_jira.png" width="700">
+
 <img src="screenshots/jira/jira-bugs.png" width="700">
 
 ---
